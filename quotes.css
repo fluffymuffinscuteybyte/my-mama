@@ -42,7 +42,7 @@ body {
     letter-spacing: 10px;
     font-size: 50px;
     transform: rotate(-2deg);
-    border-bottom: 2px dotted  #515235;
+    border-bottom: 2px dotted  white;
     border-radius: 1rem;
     padding: 0.5rem;
     margin-top: 2.5rem;
@@ -114,30 +114,46 @@ lord-icon {
     padding: 0.4rem;
 }
 
-.corner-heart {
+.hearts-container {
     position: fixed;
-    top: 20px;
-    font-size: 42px;
-    animation: heartbeat 1.6s infinite ease-in-out;
-    z-index: 9999;
+    top: 0;
+    width: 50px; /* area where hearts will spawn */
+    height: 100vh;
     pointer-events: none;
-    filter: drop-shadow(0 0 8px rgba(255, 0, 100, 0.6));
+    z-index: 9999;
 }
 
-.left-heart {
-    left: 20px;
-}
-
-.right-heart {
+.hearts-container.right {
     right: 20px;
 }
 
-@keyframes heartbeat {
-    0% { transform: scale(1); opacity: 0.85; }
-    25% { transform: scale(1.2); opacity: 1; }
-    50% { transform: scale(1); }
-    75% { transform: scale(1.15); }
-    100% { transform: scale(1); opacity: 0.85; }
+.hearts-container.left {
+    left: 20px;
+}
+
+.falling-heart {
+    position: absolute;
+    font-size: 24px;
+    animation: fall linear forwards;
+    color: #ff007f;
+    opacity: 0.8;
+    user-select: none;
+    pointer-events: none;
+    filter: drop-shadow(0 0 8px rgba(255,0,100,0.6));
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
 }
 
 @media only screen and (max-width: 400px) {
@@ -161,6 +177,7 @@ lord-icon {
     }
 
 }
+
 
 
 
