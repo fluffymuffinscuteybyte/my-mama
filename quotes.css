@@ -116,8 +116,7 @@ lord-icon {
 
 .falling-heart {
     position: fixed;
-    top: -50px; /* start slightly above the screen */
-    font-size: 20px; /* default size, will randomize via JS */
+    font-size: 20px; /* default size, randomize in JS */
     pointer-events: none;
     animation-name: fall;
     animation-timing-function: linear;
@@ -127,14 +126,15 @@ lord-icon {
 
 @keyframes fall {
     0% {
-        transform: translateY(0) rotate(0deg);
+        transform: translate(0, 0) rotate(0deg);
         opacity: 1;
     }
     100% {
-        transform: translateY(100vh) rotate(360deg); /* fall to bottom and rotate */
+        transform: translate(100vw, 100vh) rotate(360deg); /* hearts fall diagonally */
         opacity: 0;
     }
 }
+
 
 
 
@@ -159,6 +159,7 @@ lord-icon {
     }
 
 }
+
 
 
 
