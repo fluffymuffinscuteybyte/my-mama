@@ -180,18 +180,15 @@ function createFlyingHeart() {
     heart.className = 'flying-heart';
     heart.textContent = '❤️';
 
-    // Random horizontal position along the bottom
+    // Random horizontal position along screen width
     heart.style.left = Math.random() * window.innerWidth + 'px';
-    
+
     // Random size
-    heart.style.fontSize = 15 + Math.random() * 25 + 'px';
+    heart.style.fontSize = 10 + Math.random() * 30 + 'px';
 
-    // Random duration
-    const duration = 3 + Math.random() * 4; // 3s to 7s
-    heart.style.animationDuration = duration + 's';
-
-    // Randomly pick sway or straight fly
-    heart.style.animationName = Math.random() < 0.5 ? 'fly-up' : 'fly-up-sway';
+    // Random speed
+    const duration = 3 + Math.random() * 3; // 3s to 6s
+    heart.style.animation = `fly-up-fade ${duration}s linear forwards`;
 
     // Start from bottom
     heart.style.bottom = '0';
@@ -199,12 +196,16 @@ function createFlyingHeart() {
     // Add to body
     document.body.appendChild(heart);
 
-    // Remove after animation
+    // Remove after animation finishes
     setTimeout(() => heart.remove(), duration * 1000);
 }
 
-// Spawn hearts every 200ms
-setInterval(createFlyingHeart, 200);
+// Spawn multiple hearts rapidly
+setInterval(() => {
+    for(let i=0; i<3; i++){ // 3 hearts at a time
+        createFlyingHeart();
+    }
+}, 150); // every 150ms
 </script>
 
 
@@ -212,6 +213,7 @@ setInterval(createFlyingHeart, 200);
 
 
 </html>
+
 
 
 
