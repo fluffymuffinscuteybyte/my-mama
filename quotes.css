@@ -114,28 +114,43 @@ lord-icon {
     padding: 0.4rem;
 }
 
-.falling-heart {
+.flying-heart {
     position: fixed;
-    font-size: 20px; /* default size, randomize in JS */
     pointer-events: none;
-    animation-name: fall;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
+    font-size: 20px; /* JS will randomize */
     z-index: 9999;
+    opacity: 1;
 }
-
-@keyframes fall {
+@keyframes fly-up {
     0% {
-        transform: translate(0, 0) rotate(0deg);
+        transform: translateY(0) rotate(0deg);
         opacity: 1;
     }
     100% {
-        transform: translate(100vw, 100vh) rotate(360deg); /* hearts fall diagonally */
+        transform: translateY(-100vh) rotate(720deg); /* move up and rotate 2 turns */
         opacity: 0;
     }
 }
 
-
+@keyframes fly-up-sway {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 1;
+    }
+    25% {
+        transform: translateY(-25vh) translateX(10px) rotate(180deg);
+    }
+    50% {
+        transform: translateY(-50vh) translateX(-10px) rotate(360deg);
+    }
+    75% {
+        transform: translateY(-75vh) translateX(5px) rotate(540deg);
+    }
+    100% {
+        transform: translateY(-100vh) translateX(0) rotate(720deg);
+        opacity: 0;
+    }
+}
 
 
 @media only screen and (max-width: 400px) {
@@ -159,6 +174,7 @@ lord-icon {
     }
 
 }
+
 
 
 
