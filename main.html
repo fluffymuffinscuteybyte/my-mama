@@ -180,28 +180,35 @@ function createHeart() {
     heart.className = 'falling-heart';
     heart.textContent = '❤️';
 
-    // Randomly pick left or right side
-    const startSide = Math.random() > 0.5 ? 'left' : 'right';
+    // Random horizontal position (0 to 100% of window width)
+    heart.style.left = Math.random() * window.innerWidth + 'px';
 
-    // Random horizontal start position within the container width
-    const startPosition = Math.random() * window.innerWidth;
-    heart.style.left = startPosition + 'px'; 
+    // Random size
+    heart.style.fontSize = 10 + Math.random() * 30 + 'px'; // 10px to 40px
 
     // Random animation duration
-    const duration = 5 + Math.random() * 3; // hearts will fall for 5 to 8 seconds
+    const duration = 3 + Math.random() * 4; // 3s to 7s
     heart.style.animationDuration = duration + 's';
 
-    // Append to body
+    // Random delay (optional, creates stagger effect)
+    const delay = Math.random() * 2;
+    heart.style.animationDelay = delay + 's';
+
+    // Add the heart to the body
     document.body.appendChild(heart);
 
     // Remove the heart after animation ends
     setTimeout(() => {
         heart.remove();
-    }, duration * 1000);
+    }, (duration + delay) * 1000);
 }
 
-// Increase the frequency of heart generation
-setInterval(createHeart, 200);  // Create hearts every 200ms
+// Create multiple hearts per interval for denser rain
+setInterval(() => {
+    for (let i = 0; i < 5; i++) { // 5 hearts at a time
+        createHeart();
+    }
+}, 200); // every 200ms
 </script>
 
 
@@ -209,6 +216,7 @@ setInterval(createHeart, 200);  // Create hearts every 200ms
 
 
 </html>
+
 
 
 
