@@ -117,6 +117,8 @@ lord-icon {
 .falling-heart {
     position: absolute;
     animation: fall 5s linear infinite;
+    opacity: 1;
+    z-index: 9999;
 }
 
 @keyframes fall {
@@ -125,7 +127,7 @@ lord-icon {
         opacity: 1;
     }
     100% {
-        transform: translateY(100vh);  /* Move the heart down */
+        transform: translateY(100vh); /* Move the heart down to the bottom */
         opacity: 0;
     }
 }
@@ -135,6 +137,7 @@ lord-icon {
     z-index: 9999;
     pointer-events: none;
 }
+
 
 
 @media only screen and (max-width: 400px) {
@@ -158,6 +161,7 @@ lord-icon {
     }
 
 }
+
 
 
 
