@@ -74,7 +74,7 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Hide the Spotify iframe visually but keep audio */
+        /* Hide Spotify iframe but keep audio */
         .spotify-player {
             display: none;
         }
@@ -85,15 +85,19 @@
     <!-- Main content iframe -->
     <iframe src="main.html" style="width: 100%; height: 100vh; border: none;" id="content-frame"></iframe>
 
-    <!-- Music button -->
+    <!-- Music toggle button -->
     <div class="music">
         <i class="iconfont music-close">&#xea28;</i>
     </div>
 
-    <!-- Spotify embed for Shania Twain - When You Kiss Me -->
+    <!-- Spotify embed (hidden) -->
     <iframe class="spotify-player" id="spotifyPlayer"
         src="https://open.spotify.com/embed/track/7b8mI7YNGUfckTtyzoe1Zm?utm_source=generator"
-        width="0" height="0" allow="autoplay; encrypted-media" allowtransparency="true" frameborder="0"></iframe>
+        width="0" height="0"
+        frameborder="0"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        allowfullscreen>
+    </iframe>
 
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
     <script>
@@ -103,46 +107,39 @@
 
         let isPlaying = false;
 
-        // Toggle Spotify playback using postMessage
-        musicDom.addEventListener('click', function (event) {
+        // Function to play Spotify via postMessage
+        function playSpotify() {
+            spotifyIframe.contentWindow.postMessage({ method: 'play' }, 'https://open.spotify.com');
+            musicCloseDom.classList.add('rotate');
+            isPlaying = true;
+        }
+
+        // Function to pause Spotify
+        function pauseSpotify() {
+            spotifyIframe.contentWindow.postMessage({ method: 'pause' }, 'https://open.spotify.com');
+            musicCloseDom.classList.remove('rotate');
+            isPlaying = false;
+        }
+
+        // Toggle music when the button is clicked
+        musicDom.addEventListener('click', function () {
             if (!isPlaying) {
-                spotifyIframe.contentWindow.postMessage({
-                    method: 'play'
-                }, 'https://open.spotify.com');
-                musicCloseDom.classList.add('rotate');
-                isPlaying = true;
+                playSpotify();
             } else {
-                spotifyIframe.contentWindow.postMessage({
-                    method: 'pause'
-                }, 'https://open.spotify.com');
-                musicCloseDom.classList.remove('rotate');
-                isPlaying = false;
+                pauseSpotify();
             }
-            event.preventDefault();
         });
 
-        // Listen for messages from child pages (optional)
+        // Listen for messages from child pages (e.g., valentine.html)
         window.addEventListener('message', function (e) {
-            if (e.data === 'startMusic') {
-                if (!isPlaying) {
-                    spotifyIframe.contentWindow.postMessage({
-                        method: 'play'
-                    }, 'https://open.spotify.com');
-                    musicCloseDom.classList.add('rotate');
-                    isPlaying = true;
-                }
-            } else if (e.data === 'stopMusic') {
-                if (isPlaying) {
-                    spotifyIframe.contentWindow.postMessage({
-                        method: 'pause'
-                    }, 'https://open.spotify.com');
-                    musicCloseDom.classList.remove('rotate');
-                    isPlaying = false;
-                }
+            if (e.data === 'startMusic' && !isPlaying) {
+                playSpotify();
+            } else if (e.data === 'stopMusic' && isPlaying) {
+                pauseSpotify();
             }
         });
 
-        // Update page title from config.json
+        // Update page title dynamically
         fetch('config.json')
             .then(response => response.json())
             .then(config => {
