@@ -175,10 +175,43 @@
             });
         });
     </script>
+    
+    <script>
+function createHeart(side) {
+    const heart = document.createElement('div');
+    heart.className = 'falling-heart';
+    heart.textContent = '❤️';
+    
+    // Random horizontal start position within the container width
+    heart.style.left = Math.random() * 50 + 'px';
+    heart.style.fontSize = (10 + Math.random() * 20) + 'px'; // random size
+    
+    // Random animation duration
+    const duration = 3 + Math.random() * 3; // 3s to 6s
+    heart.style.animationDuration = duration + 's';
+    
+    // Append to container
+    const container = document.querySelector(`.hearts-container.${side}`);
+    container.appendChild(heart);
+
+    // Remove heart after animation ends
+    setTimeout(() => {
+        heart.remove();
+    }, duration * 1000);
+}
+
+// Spawn hearts every 300ms
+setInterval(() => {
+    createHeart('left');
+    createHeart('right');
+}, 300);
+</script>
+
 </body>
 
 
 </html>
+
 
 
 
