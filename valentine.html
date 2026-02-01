@@ -43,6 +43,7 @@
                 <div class="quotes"></div>
             </div>
         </div>
+
         <div class="heart-wrap">
             <div class="heart">
                 <div class="tank"></div>
@@ -59,13 +60,7 @@
                 </svg>
             </div>
         </div>
-        <svg style="position: absolute; width: 0; height: 0; overflow: hidden;">
-            <clipPath id="myPath" clipPathUnits="objectBoundingBox">
-                <path
-                    d="M0.373,0.967 S0.616,0.866,0.768,0.644 S0.912,0.107,0.739,0 S0.373,0.108,0.373,0.108 S0.166,-0.113,0,-0.002 S-0.159,0.432,-0.021,0.644 S0.373,0.967,0.373,0.967">
-                </path>
-            </clipPath>
-        </svg>
+
         <div class="copyright-container" style="margin-top: 20px;">
             <h3 class="copyright">Created with ❤️ by <a id="instagramProfileLink" href="#" target="_blank"><span
                         id="instagramProfileName"></span></a></h3>
@@ -92,8 +87,10 @@
                     tank.style.height = `${fillHeight}%`;
 
                     if (clickCount === 3) {
-                        // Tell parent page to start Spotify music if not playing
-                        window.parent.postMessage('startMusic', '*');
+                        // Send message to parent (index.html) to start Spotify
+                        if (window.parent) {
+                            window.parent.postMessage('startMusic', '*');
+                        }
 
                         setTimeout(() => {
                             // Redirect to the next page without stopping music
