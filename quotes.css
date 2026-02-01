@@ -115,27 +115,25 @@ lord-icon {
 }
 
 .falling-heart {
-    position: absolute;
-    animation: fall 5s linear infinite;
-    opacity: 1;
+    position: fixed;
+    top: -50px; /* start slightly above the screen */
+    font-size: 20px; /* default size, will randomize via JS */
+    pointer-events: none;
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
     z-index: 9999;
 }
 
 @keyframes fall {
     0% {
-        transform: translateY(0);
+        transform: translateY(0) rotate(0deg);
         opacity: 1;
     }
     100% {
-        transform: translateY(100vh); /* Move the heart down to the bottom */
+        transform: translateY(100vh) rotate(360deg); /* fall to bottom and rotate */
         opacity: 0;
     }
-}
-
-.hearts-container {
-    position: fixed;
-    z-index: 9999;
-    pointer-events: none;
 }
 
 
@@ -161,6 +159,7 @@ lord-icon {
     }
 
 }
+
 
 
 
