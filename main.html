@@ -175,26 +175,48 @@
     </script>
     
     <script>
-function createHeart() {
+function createHeartFromCorner(corner) {
     const heart = document.createElement('div');
     heart.className = 'falling-heart';
     heart.textContent = '❤️';
 
-    // Random horizontal position (0 to 100% of window width)
-    heart.style.left = Math.random() * window.innerWidth + 'px';
+    // Random size for hearts
+    const size = 10 + Math.random() * 30; // between 10px and 40px
+    heart.style.fontSize = `${size}px`;
 
-    // Random size
-    heart.style.fontSize = 10 + Math.random() * 30 + 'px'; // 10px to 40px
+    // Random speed (animation duration) between 3s and 7s
+    const duration = 3 + Math.random() * 4;
+    heart.style.animationDuration = `${duration}s`;
 
-    // Random animation duration
-    const duration = 3 + Math.random() * 4; // 3s to 7s
-    heart.style.animationDuration = duration + 's';
-
-    // Random delay (optional, creates stagger effect)
+    // Random delay (optional, adds a staggered effect)
     const delay = Math.random() * 2;
-    heart.style.animationDelay = delay + 's';
+    heart.style.animationDelay = `${delay}s`;
 
-    // Add the heart to the body
+    // Start position based on corner
+    switch(corner) {
+        case 'top-left':
+            heart.style.top = '0';
+            heart.style.left = '0';
+            heart.style.animationName = 'fall-top-left';
+            break;
+        case 'top-right':
+            heart.style.top = '0';
+            heart.style.right = '0';
+            heart.style.animationName = 'fall-top-right';
+            break;
+        case 'bottom-left':
+            heart.style.bottom = '0';
+            heart.style.left = '0';
+            heart.style.animationName = 'fall-bottom-left';
+            break;
+        case 'bottom-right':
+            heart.style.bottom = '0';
+            heart.style.right = '0';
+            heart.style.animationName = 'fall-bottom-right';
+            break;
+    }
+
+    // Append the heart to the body
     document.body.appendChild(heart);
 
     // Remove the heart after animation ends
@@ -203,12 +225,12 @@ function createHeart() {
     }, (duration + delay) * 1000);
 }
 
-// Create multiple hearts per interval for denser rain
+// Create hearts at random intervals and from random corners
 setInterval(() => {
-    for (let i = 0; i < 5; i++) { // 5 hearts at a time
-        createHeart();
-    }
-}, 200); // every 200ms
+    const corners = ['top-left', 'top-right', 'bottom-left', 'bottom-right'];
+    const randomCorner = corners[Math.floor(Math.random() * corners.length)];
+    createHeartFromCorner(randomCorner);
+}, 200); // Spawn a new heart every 200ms
 </script>
 
 
@@ -216,6 +238,7 @@ setInterval(() => {
 
 
 </html>
+
 
 
 
