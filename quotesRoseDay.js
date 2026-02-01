@@ -1,6 +1,6 @@
 const quotesDiv = document.querySelector(".quotes");
-const fpName = document.querySelector("#fpname");
 const spName = document.querySelector("#spname");
+const fpName = document.querySelector("#fpname");
 
 const roseDay = [
     `You are a Rose of My Dream,
@@ -60,5 +60,6 @@ quoteDivs.forEach(quote => {
     localStorage.setItem("chosenQuote", chosenQuote);
   });
 });
+
 
 
