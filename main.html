@@ -175,62 +175,36 @@
     </script>
     
     <script>
-function createHeartFromCorner(corner) {
+function createFlyingHeart() {
     const heart = document.createElement('div');
-    heart.className = 'falling-heart';
+    heart.className = 'flying-heart';
     heart.textContent = '❤️';
 
-    // Random size for hearts
-    const size = 10 + Math.random() * 30; // between 10px and 40px
-    heart.style.fontSize = `${size}px`;
+    // Random horizontal position along the bottom
+    heart.style.left = Math.random() * window.innerWidth + 'px';
+    
+    // Random size
+    heart.style.fontSize = 15 + Math.random() * 25 + 'px';
 
-    // Random speed (animation duration) between 3s and 7s
-    const duration = 3 + Math.random() * 4;
-    heart.style.animationDuration = `${duration}s`;
+    // Random duration
+    const duration = 3 + Math.random() * 4; // 3s to 7s
+    heart.style.animationDuration = duration + 's';
 
-    // Random delay (optional, adds a staggered effect)
-    const delay = Math.random() * 2;
-    heart.style.animationDelay = `${delay}s`;
+    // Randomly pick sway or straight fly
+    heart.style.animationName = Math.random() < 0.5 ? 'fly-up' : 'fly-up-sway';
 
-    // Start position based on corner
-    switch(corner) {
-        case 'top-left':
-            heart.style.top = '0';
-            heart.style.left = '0';
-            heart.style.animationName = 'fall-top-left';
-            break;
-        case 'top-right':
-            heart.style.top = '0';
-            heart.style.right = '0';
-            heart.style.animationName = 'fall-top-right';
-            break;
-        case 'bottom-left':
-            heart.style.bottom = '0';
-            heart.style.left = '0';
-            heart.style.animationName = 'fall-bottom-left';
-            break;
-        case 'bottom-right':
-            heart.style.bottom = '0';
-            heart.style.right = '0';
-            heart.style.animationName = 'fall-bottom-right';
-            break;
-    }
+    // Start from bottom
+    heart.style.bottom = '0';
 
-    // Append the heart to the body
+    // Add to body
     document.body.appendChild(heart);
 
-    // Remove the heart after animation ends
-    setTimeout(() => {
-        heart.remove();
-    }, (duration + delay) * 1000);
+    // Remove after animation
+    setTimeout(() => heart.remove(), duration * 1000);
 }
 
-// Create hearts at random intervals and from random corners
-setInterval(() => {
-    const corners = ['top-left', 'top-right', 'bottom-left', 'bottom-right'];
-    const randomCorner = corners[Math.floor(Math.random() * corners.length)];
-    createHeartFromCorner(randomCorner);
-}, 200); // Spawn a new heart every 200ms
+// Spawn hearts every 200ms
+setInterval(createFlyingHeart, 200);
 </script>
 
 
@@ -238,6 +212,7 @@ setInterval(() => {
 
 
 </html>
+
 
 
 
