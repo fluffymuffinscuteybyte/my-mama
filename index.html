@@ -4,17 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- The title will be updated dynamically using config.json -->
     <title>Happy Valentine's Day My Love 💗💗💗</title>
     <link rel="stylesheet" href="quotes.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <style>
-        /* Music button styling */
         .music {
             width: 35px;
             height: 35px;
             position: fixed;
             top: 3.5vh;
+            /* Default for larger screens: top right */
             right: 3.5vh;
             border-radius: 50%;
             background-color: rgba(0, 0, 0, 0.6);
@@ -25,6 +26,7 @@
             z-index: 10000;
         }
 
+        /* For mobile devices, reposition the music element to the bottom right */
         @media only screen and (max-width: 768px) {
             .music {
                 top: auto;
@@ -73,79 +75,107 @@
             -webkit-text-stroke-width: 0.2px;
             -moz-osx-font-smoothing: grayscale;
         }
-
-        /* Hide Spotify iframe but keep audio */
-        .spotify-player {
-            display: none;
-        }
     </style>
 </head>
 
 <body>
-    <!-- Main content iframe -->
+    <!-- Content iframe where your pages (index.html, rose.html, etc.) will be loaded -->
     <iframe src="main.html" style="width: 100%; height: 100vh; border: none;" id="content-frame"></iframe>
 
-    <!-- Music toggle button -->
+    <!-- Music element positioned based on screen size -->
     <div class="music">
         <i class="iconfont music-close">&#xea28;</i>
+        <!-- Audio element without autoplay and muted attributes -->
+        <audio class="audio" preload loop>
+            <source src="./assets/Perfect (Acoustic).mp3" type="audio/mp3" />
+            Your browser does not support the audio element.
+        </audio>
     </div>
-
-    <!-- Spotify embed (hidden) -->
-    <iframe class="spotify-player" id="spotifyPlayer"
-        src="https://open.spotify.com/embed/track/7b8mI7YNGUfckTtyzoe1Zm?utm_source=generator"
-        width="0" height="0"
-        frameborder="0"
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-        allowfullscreen>
-    </iframe>
-
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
     <script>
-        const musicDom = document.querySelector('.music');
-        const musicCloseDom = musicDom.querySelector('.music-close');
-        const spotifyIframe = document.getElementById('spotifyPlayer');
+        var musicDom = document.querySelector('.music');
+        var audioDom = document.querySelector('.audio');
+        var musicCloseDom = musicDom.querySelector('.music-close');
 
-        let isPlaying = false;
-
-        // Function to play Spotify via postMessage
-        function playSpotify() {
-            spotifyIframe.contentWindow.postMessage({ method: 'play' }, 'https://open.spotify.com');
-            musicCloseDom.classList.add('rotate');
-            isPlaying = true;
+        // Existing logic for audio on iOS/Android (if needed)
+        if (audioDom.readyState == 4) { // Android-specific logic
+            console.log('loaded');
+        } else { // iOS logic
+            audioDom.addEventListener('play', function () {
+                try {
+                    musicCloseDom.classList.add('rotate');
+                } catch (error) {
+                    // Handle error if necessary
+                }
+            }, false);
+            audioDom.addEventListener('canplaythrough', function () {
+                try {
+                    var promise = audioDom.play();
+                    if (promise !== undefined) {
+                        promise.then(function () {
+                            musicCloseDom.classList.add('rotate');
+                        }).catch(function () {
+                            musicCloseDom.classList.remove('rotate');
+                        });
+                    }
+                } catch (error) {
+                    console.log('error', error);
+                }
+            }, false);
+            audioDom.load();
         }
 
-        // Function to pause Spotify
-        function pauseSpotify() {
-            spotifyIframe.contentWindow.postMessage({ method: 'pause' }, 'https://open.spotify.com');
-            musicCloseDom.classList.remove('rotate');
-            isPlaying = false;
-        }
-
-        // Toggle music when the button is clicked
-        musicDom.addEventListener('click', function () {
-            if (!isPlaying) {
-                playSpotify();
+        // On click, toggle play/pause manually.
+        musicDom.addEventListener('click', function (event) {
+            if (!audioDom.paused) {
+                audioDom.pause();
+                musicCloseDom.classList.remove('rotate');
             } else {
-                pauseSpotify();
+                audioDom.play();
+                musicCloseDom.classList.add('rotate');
             }
-        });
+            event.preventDefault();
+        }, false);
 
-        // Listen for messages from child pages (e.g., valentine.html)
+        // Listen for a message from child pages (e.g. index.html) to start the music.
         window.addEventListener('message', function (e) {
-            if (e.data === 'startMusic' && !isPlaying) {
-                playSpotify();
-            } else if (e.data === 'stopMusic' && isPlaying) {
-                pauseSpotify();
+            if (e.data === 'startMusic') {
+                if (audioDom.paused) {
+                    audioDom.play();
+                    musicCloseDom.classList.add('rotate');
+                }
             }
-        });
+        }, false);
 
-        // Update page title dynamically
+        // Fetch configuration and update the document title dynamically.
         fetch('config.json')
             .then(response => response.json())
             .then(config => {
+                // Update the title with the names from the configuration file.
                 document.title = `Happy Valentine's Day, ${config.fpName} & ${config.spName}`;
             })
             .catch(error => console.error('Error loading config:', error));
+
+            document.addEventListener('DOMContentLoaded', function () {
+        const audioDom = document.querySelector('.audio'); // Get the audio element
+        const musicCloseDom = document.querySelector('.music-close'); // Get the music icon element
+
+        // Listen for a message to stop the music
+        window.addEventListener('message', function (event) {
+            if (event.data === 'stopMusic') {
+                if (audioDom) {
+                    audioDom.pause(); // Pause the audio
+                    audioDom.currentTime = 0; // Reset the audio to the beginning
+                    console.log("Music stopped via message.");
+                }
+
+                // Remove the rotate class from the music icon
+                if (musicCloseDom) {
+                    musicCloseDom.classList.remove('rotate');
+                }
+            }
+        }, false);
+    });
     </script>
 </body>
 
