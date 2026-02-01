@@ -180,43 +180,28 @@ function createHeart() {
     heart.className = 'falling-heart';
     heart.textContent = '❤️';
 
-    // Randomly choose one of the four corners
-    const corner = Math.floor(Math.random() * 4);
-    let left, bottom;
+    // Randomly pick left or right side
+    const startSide = Math.random() > 0.5 ? 'left' : 'right';
 
-    if (corner === 0) {          // Top-left
-        left = '10px';
-        bottom = '100%';
-    } else if (corner === 1) {   // Top-right
-        left = 'calc(100% - 30px)';
-        bottom = '100%';
-    } else if (corner === 2) {   // Bottom-left
-        left = '10px';
-        bottom = '0';
-    } else {                     // Bottom-right
-        left = 'calc(100% - 30px)';
-        bottom = '0';
-    }
+    // Random horizontal start position within the container width
+    const startPosition = Math.random() * window.innerWidth;
+    heart.style.left = startPosition + 'px'; 
 
-    heart.style.left = left;
-    heart.style.bottom = bottom;
-
-    // Random size
-    heart.style.fontSize = (15 + Math.random() * 20) + 'px';
-
-    // Random animation duration (speed)
-    const duration = 3 + Math.random() * 3;
+    // Random animation duration
+    const duration = 5 + Math.random() * 3; // hearts will fall for 5 to 8 seconds
     heart.style.animationDuration = duration + 's';
 
-    // Add the heart to the body
+    // Append to body
     document.body.appendChild(heart);
 
     // Remove the heart after animation ends
-    setTimeout(() => heart.remove(), duration * 1000);
+    setTimeout(() => {
+        heart.remove();
+    }, duration * 1000);
 }
 
-// Spawn a heart every 300ms
-setInterval(createHeart, 300);
+// Increase the frequency of heart generation
+setInterval(createHeart, 200);  // Create hearts every 200ms
 </script>
 
 
@@ -224,6 +209,7 @@ setInterval(createHeart, 300);
 
 
 </html>
+
 
 
 
