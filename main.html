@@ -11,12 +11,10 @@
 </head>
 
 <body>
-    <div class="hearts-container left"></div>
-    <div class="hearts-container right"></div>
     <div class="main">
         <h2>* Choose the day *</h2>
         <div class="container">
-            <a href="rose.html" class="day-link" data-date="2026-02-07">
+            <a href="rose.html" class="day-link" data-date="2025-02-07">
                 <div class="rose-day day">
                     <div class="icon">
                         <lord-icon src="https://cdn.lordicon.com/jmeofbeb.json" trigger="hover"></lord-icon>
@@ -28,7 +26,7 @@
                     </div>
                 </div>
             </a>
-            <a href="propose.html" class="day-link" data-date="2026-02-08">
+            <a href="propose.html" class="day-link" data-date="2025-02-08">
                 <div class="propose-day day">
                     <div class="icon">
                         <lord-icon src="https://cdn.lordicon.com/etgnxeer.json" trigger="hover"></lord-icon>
@@ -40,7 +38,7 @@
                     </div>
                 </div>
             </a>
-            <a href="chocolate.html" class="day-link" data-date="2026-02-09">
+            <a href="chocolate.html" class="day-link" data-date="2025-02-09">
                 <div class="chocolate-day day">
                     <div class="icon">
                         <lord-icon src="https://cdn.lordicon.com/mlxonlmo.json" trigger="hover"></lord-icon>
@@ -52,7 +50,7 @@
                     </div>
                 </div>
             </a>
-            <a href="teddy.html" class="day-link" data-date="2026-02-10">
+            <a href="teddy.html" class="day-link" data-date="2025-02-10">
                 <div class="teddy-day day">
                     <div class="icon">
                         <lord-icon src="https://cdn.lordicon.com/mlxonlmo.json" trigger="hover"></lord-icon>
@@ -64,7 +62,7 @@
                     </div>
                 </div>
             </a>
-            <a href="promise.html" class="day-link" data-date="2026-02-11">
+            <a href="promise.html" class="day-link" data-date="2025-02-11">
                 <div class="promise-day day">
                     <div class="icon">
                         <lord-icon src="https://cdn.lordicon.com/ibufipbp.json" trigger="hover"></lord-icon>
@@ -76,7 +74,7 @@
                     </div>
                 </div>
             </a>
-            <a href="hug.html" class="day-link" data-date="2026-02-12">
+            <a href="hug.html" class="day-link" data-date="2025-02-12">
                 <div class="hug-day day">
                     <div class="icon">
                         <lord-icon src="https://cdn.lordicon.com/etgnxeer.json" trigger="hover"></lord-icon>
@@ -88,7 +86,7 @@
                     </div>
                 </div>
             </a>
-            <a href="kiss.html" class="day-link" data-date="2026-02-13">
+            <a href="kiss.html" class="day-link" data-date="2025-02-13">
                 <div class="kis-day day">
                     <div class="icon">
                         <lord-icon src="https://cdn.lordicon.com/etgnxeer.json" trigger="hover"></lord-icon>
@@ -100,7 +98,7 @@
                     </div>
                 </div>
             </a>
-            <a href="valentine.html" class="day-link" data-date="2026-02-14">
+            <a href="valentine.html" class="day-link" data-date="2025-02-14">
                 <div class="valentine-day day">
                     <div class="icon">
                         <lord-icon src="https://cdn.lordicon.com/etgnxeer.json" trigger="hover"></lord-icon>
@@ -177,40 +175,56 @@
     </script>
     
     <script>
-function createHeart(side) {
+function createHeart() {
     const heart = document.createElement('div');
     heart.className = 'falling-heart';
     heart.textContent = '❤️';
-    
-    // Random horizontal start position within the container width
-    heart.style.left = Math.random() * 50 + 'px';
-    heart.style.fontSize = (10 + Math.random() * 20) + 'px'; // random size
-    
-    // Random animation duration
-    const duration = 3 + Math.random() * 3; // 3s to 6s
-    heart.style.animationDuration = duration + 's';
-    
-    // Append to container
-    const container = document.querySelector(`.hearts-container.${side}`);
-    container.appendChild(heart);
 
-    // Remove heart after animation ends
-    setTimeout(() => {
-        heart.remove();
-    }, duration * 1000);
+    // Randomly choose one of the four corners
+    const corner = Math.floor(Math.random() * 4);
+    let left, bottom;
+
+    if (corner === 0) {          // Top-left
+        left = '10px';
+        bottom = '100%';
+    } else if (corner === 1) {   // Top-right
+        left = 'calc(100% - 30px)';
+        bottom = '100%';
+    } else if (corner === 2) {   // Bottom-left
+        left = '10px';
+        bottom = '0';
+    } else {                     // Bottom-right
+        left = 'calc(100% - 30px)';
+        bottom = '0';
+    }
+
+    heart.style.left = left;
+    heart.style.bottom = bottom;
+
+    // Random size
+    heart.style.fontSize = (15 + Math.random() * 20) + 'px';
+
+    // Random animation duration (speed)
+    const duration = 3 + Math.random() * 3;
+    heart.style.animationDuration = duration + 's';
+
+    // Add the heart to the body
+    document.body.appendChild(heart);
+
+    // Remove the heart after animation ends
+    setTimeout(() => heart.remove(), duration * 1000);
 }
 
-// Spawn hearts every 300ms
-setInterval(() => {
-    createHeart('left');
-    createHeart('right');
-}, 300);
+// Spawn a heart every 300ms
+setInterval(createHeart, 300);
 </script>
+
 
 </body>
 
 
 </html>
+
 
 
 
