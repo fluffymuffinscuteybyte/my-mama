@@ -117,21 +117,23 @@ lord-icon {
 .flying-heart {
     position: fixed;
     pointer-events: none;
-    font-size: 20px; /* JS will randomize */
+    font-size: 20px;
     z-index: 9999;
-    opacity: 1;
-}
-@keyframes fly-up {
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-100vh) rotate(720deg); /* move up and rotate 2 turns */
-        opacity: 0;
-    }
 }
 
+@keyframes fly-up-fade {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    75% {
+        opacity: 1; /* fully visible until 3/4 of screen */
+    }
+    100% {
+        transform: translateY(-100vh); /* rise to top */
+        opacity: 0; /* fade out */
+    }
+}
 @keyframes fly-up-sway {
     0% {
         transform: translateY(0) translateX(0) rotate(0deg);
@@ -174,6 +176,7 @@ lord-icon {
     }
 
 }
+
 
 
 
