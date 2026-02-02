@@ -214,7 +214,7 @@ body {
 #fpName {
     text-transform: capitalize;
     letter-spacing: 2.5px;
-    color: rgb(246, 131, 246);
+    color: #b8860b;
 }
 
 .copyright {
@@ -256,4 +256,5 @@ body {
     .message {
         width: 100%;
     }
+
 }
