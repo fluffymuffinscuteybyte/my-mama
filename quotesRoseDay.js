@@ -13,13 +13,13 @@ const roseDay = [
     Take this rose as a gesture of my love,
     Wishing you a Happy Rose Day!`,
     `This Rose Day, I pray to God that the thorns on your life's path be vanished and it is filled with the beautiful petals of love, blessings and friendship. Happy Rose Day, my love!`,
-    `When I looked at the red roses and you, I found that you are the most beautiful creation of God. Happy Rose Day, my mama!`,
-    `People are lucky who are blessed with true love in their life... I am one of them. Happy Rose Day, darling!`,
+    `I may not be a poet, but when it comes to you, my heart is filled with words as sweet as roses. Happy Rose Day! my mama!`,
+    `People are lucky who are blessed with true love in their life... I am one of them. Happy Rose Day, mama!`,
     `There is no feeling for soothing and comforting than having the love of your life beside you.
-    I love you, sweetie. Happy Rose Day!`,
+    I love you, mama. Happy Rose Day!`,
     `Roses are timeless just like my love for you, my love. Happy Rose Day, my MAMA!`,
     `Out of all the unique ways of expressing love, I choose a romantic bunch of red roses for you that speak of my deep love for you…With all the warm hugs and kisses, wishing you a vivacious Rose Day, love.`,
-    `You entered into my life with a fragrance of joy, You are just like a beautiful rose. Happy Rose Day!`,
+    `You are the sweetest flower in my life. Here’s to another year of love and happiness together. Happy Rose Day!`,
     `Sending you this beautiful bouquet of red roses to express my love to you that is deep like an ocean and vast as a sky. Happy Rose Day!`,
     `Of all the attractive flowers on this planet, a rose is undoubtedly the most beautiful one. And, so are you, my mama! Happy Rose Day!`
 ];
@@ -60,3 +60,4 @@ quoteDivs.forEach(quote => {
     localStorage.setItem("chosenQuote", chosenQuote);
   });
 });
+
