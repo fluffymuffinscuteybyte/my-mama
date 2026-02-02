@@ -211,11 +211,17 @@ body {
 }
 
 #spName,
-#fpName {
+#fpname {
     text-transform: capitalize;
     letter-spacing: 2.5px;
-    color: #ff66b2;
+    color: #d5006d;
+    background: linear-gradient(45deg, #d5006d, #ff66b2);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: bold;
+    text-shadow: 0 0 10px #ff66b2, 0 0 20px #ff66b2;
 }
+
 
 .copyright {
     font-size: 1.5rem;
@@ -258,4 +264,5 @@ body {
     }
 
 }
+
 
