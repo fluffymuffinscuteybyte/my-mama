@@ -24,6 +24,8 @@ Happy Teddy Day, my love!`,
   `You are my teddy bear, my forever hug,
 With you, my heart feels snug.
 Happy Teddy Day, my mama!`,
+  `Just like this teddy, I want to be the one you hold onto on your best days and your worst.
+Happy Teddy Day, my mama!`,
   `Just like a teddy bear, you are my joy,
 With you, my life feels like a beautiful toy.
 Happy Teddy Day, mamoi!`
