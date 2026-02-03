@@ -8,34 +8,34 @@ That speaks directly to the heart.
 Happy Kiss Day, my love!`,
   `Your kisses are my favorite melody,
 That plays in my heart endlessly.
-Happy Kiss Day, sweetheart!`,
+Happy Kiss Day, mama!`,
   `A kiss from you is all I need,
 To feel loved and freed.
-Happy Kiss Day, darling!`,
+Happy Kiss Day, my love!`,
   `Your kisses are like magic,
 That turns my world into a fairy tale.
 Happy Kiss Day, my love!`,
   `A kiss from you is my favorite memory,
 That I cherish endlessly.
-Happy Kiss Day, sweetheart!`,
+Happy Kiss Day, mama!`,
   `Your kisses are my sweetest addiction,
 A feeling beyond any description.
 Happy Kiss Day, my love!`,
   `A kiss from you is a moment of pure bliss,
 A reminder of love’s sweet kiss.
-Happy Kiss Day, darling!`,
+Happy Kiss Day, mama!`,
   `Your kisses are my daily dose of joy,
 A feeling no one can destroy.
-Happy Kiss Day, sweetheart!`,
+Happy Kiss Day, mama!`,
   `A kiss from you is my favorite gift,
 A treasure that gives my heart a lift.
 Happy Kiss Day, my love!`,
   `Your kisses are my forever home,
 Where I’m never alone.
-Happy Kiss Day, darling!`,
+Happy Kiss Day, my love!`,
   `A kiss from you is a silent promise,
 That you’ll always be by my side.
-Happy Kiss Day, sweetheart!`,
+Happy Kiss Day, mamoi!`,
   `Your kisses are my strength and shield,
 In your arms, my heart is healed.
 Happy Kiss Day, my love!`
