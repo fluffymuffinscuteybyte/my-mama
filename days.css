@@ -89,8 +89,15 @@ body {
     font-family: 'Protest Revolution', sans-serif;
     text-transform: uppercase;
     padding: 0.2rem 0;
-    color: #ff1493;
-    text-shadow: 0 0 5px #ff1493, 0 0 10px #ff1493, 0 0 15px #ff1493;
+    color: #800080;
+    text-shadow: 
+    0 0 5px #ff1493, 
+    0 0 10px #ff1493, 
+    0 0 15px #ff1493, 
+    0 0 20px #ff1493, 
+    0 0 30px #ff1493, 
+    0 0 40px #ff1493, 
+    0 0 50px #ff1493;
 }
 
 h3 {
@@ -357,6 +364,7 @@ lord-icon {
     }
 
 }
+
 
 
 
