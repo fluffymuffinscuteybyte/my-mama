@@ -10,23 +10,15 @@ const chocolateDayQuotes = [
   `Just like chocolate melts in the mouth,
   Your love melts my heart.
   Wishing you a very Happy Chocolate Day!`,
-  `Life is like a box of chocolates,
-  And you are the sweetest one in it.
-  Happy Chocolate Day, my love!`,
-  `You are the chocolate to my milk,
-  The sweetness to my life.
+  `Chocolate’s good, but you? You’re the real treat I can’t stop craving.
   Happy Chocolate Day, mama!`,
   `Just like chocolate makes everything better,
   Your presence makes my life sweeter.
   Happy Chocolate Day, my love!`,
-  `You are the reason my life is so sweet,
-  Just like chocolate, you make everything complete.
-  Happy Chocolate Day, my mamoi!`,
   `Just like chocolate, you are irresistible,
   And your love is simply unforgettable.
   Happy Chocolate Day, my love!`,
-  `You are the chocolate in my life,
-  Making every moment sweet and rich.
+  `Careful, baby—too much chocolate and too much of me can both drive you crazy 😈🍫
   Happy Chocolate Day, mama!`,
   `Just like chocolate, you are my favorite treat,
   And your love makes my life complete.
