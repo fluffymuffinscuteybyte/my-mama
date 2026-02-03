@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=Poppins:wght@300;400;500;600&display=swap');
 
 * {
@@ -229,7 +230,7 @@ lord-icon {
     margin: 1rem;
     border-radius: 1rem;
     color: var(--white);
-    font-family: 'Pacifico', cursive;
+    font-family: 'Delius Swash Caps', cursive;
     font-size: 1rem;
     cursor: pointer;
     aspect-ratio: 8/2;
@@ -354,6 +355,7 @@ lord-icon {
     }
 
 }
+
 
 
 
