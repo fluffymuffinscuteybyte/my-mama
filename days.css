@@ -229,7 +229,7 @@ lord-icon {
     margin: 1rem;
     border-radius: 1rem;
     color: var(--white);
-    font-family: cursive;
+    font-family: 'Pacifico', cursive;
     font-size: 1rem;
     cursor: pointer;
     aspect-ratio: 8/2;
@@ -354,6 +354,7 @@ lord-icon {
     }
 
 }
+
 
 
 
