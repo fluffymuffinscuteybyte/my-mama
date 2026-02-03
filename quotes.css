@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=Poppins:wght@300;400;500;600&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Pacifico', cursive;
+    font-family: 'Bonheur Royale', cursive;
     text-decoration: none;
 }
 
@@ -107,7 +108,7 @@ lord-icon {
 .copyright {
     font-size: 1.5rem;
     color: var(--white);
-    font-family: 'Protest';
+    font-family: 'Pacifico';
     transform: rotate(-1deg);
     border-bottom: 2px dotted var(--white);
     border-radius: 1rem;
@@ -176,6 +177,7 @@ lord-icon {
     }
 
 }
+
 
 
 
