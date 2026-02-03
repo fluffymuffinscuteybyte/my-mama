@@ -3,20 +3,17 @@ const fpName = document.querySelector("#fpname");
 const spName = document.querySelector("#spname");
 
 const kissDayQuotes = [
-  `A kiss is a language of love,
-That speaks directly to the heart.
-Happy Kiss Day, my love!`,
+  `Every kiss with you leaves a mark on my soul, 
+a promise of forever in every touch. 
+Happy Kiss Day, my heart. ❤️💋`,
   `Your kisses are my favorite melody,
 That plays in my heart endlessly.
 Happy Kiss Day, mama!`,
-  `A kiss from you is all I need,
-To feel loved and freed.
+  `I’m not saying a kiss from you is magical… 
+but I’m pretty sure it could start a fire. 🔥💋
 Happy Kiss Day, my love!`,
-  `Your kisses are like magic,
-That turns my world into a fairy tale.
-Happy Kiss Day, my love!`,
-  `A kiss from you is my favorite memory,
-That I cherish endlessly.
+  `Your lips are my favorite place to be, and 
+I could kiss you forever and never get enough 💋❤️
 Happy Kiss Day, mama!`,
   `Your kisses are my sweetest addiction,
 A feeling beyond any description.
@@ -27,18 +24,11 @@ Happy Kiss Day, mama!`,
   `Your kisses are my daily dose of joy,
 A feeling no one can destroy.
 Happy Kiss Day, mama!`,
-  `A kiss from you is my favorite gift,
-A treasure that gives my heart a lift.
-Happy Kiss Day, my love!`,
-  `Your kisses are my forever home,
-Where I’m never alone.
-Happy Kiss Day, my love!`,
-  `A kiss from you is a silent promise,
-That you’ll always be by my side.
-Happy Kiss Day, mamoi!`,
-  `Your kisses are my strength and shield,
-In your arms, my heart is healed.
-Happy Kiss Day, my love!`
+  `I’m not asking for much… just a kiss, followed by another, 
+and another until we can’t remember where it started. 😘🔥!
+  Happy Kiss Day, mama!`,
+  `One kiss from you and I’m already smiling. 💖💋
+Happy Kiss Day, mamoi!`
 ];
 
 fetch('config.json')
