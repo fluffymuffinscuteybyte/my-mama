@@ -12,22 +12,22 @@ Happy Teddy Day, my mama!`,
   `You are my teddy bear, my forever friend,
 With you, my happiness will never end.
 Happy Teddy Day, mama!`,
-  `Just like a teddy bear, you are my comfort zone,
-With you, I never feel alone.
-Happy Teddy Day, my love!`,
+  `Who needs a teddy bear when I have you to keep me warm at night? 
+I think we both know you’re the better option 😘
+Happy Teddy Day, mama!`,
   `You are my teddy bear, my partner in crime,
 With you, every moment feels so sublime.
 Happy Teddy Day, my love!`,
   `Just like a teddy bear, you are my safe place,
-With you, I find peace and grace.
+With you, I find peace and happiness.
 Happy Teddy Day, my love!`,
   `You are my teddy bear, my forever hug,
 With you, my heart feels snug.
 Happy Teddy Day, my mama!`,
   `Just like this teddy, I want to be the one you hold onto on your best days and your worst.
 Happy Teddy Day, my mama!`,
-  `Just like a teddy bear, you are my joy,
-With you, my life feels like a beautiful toy.
+  `Give me a teddy bear, and I’ll give it back
+But you? You’re staying right here in my arms.
 Happy Teddy Day, mamoi!`
 ];
 
