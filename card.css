@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baguette+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=Poppins:wght@300;400;500;600&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Bonheur Royale', cursive;
+    font-family: 'Baguette Script', cursive;
     text-decoration: none;
 }
 
@@ -214,12 +214,7 @@ body {
 #fpname {
     text-transform: capitalize;
     letter-spacing: 2.5px;
-    color: #d5006d;
-    background: linear-gradient(45deg, #d5006d, #ff66b2);
-    -webkit-background-clip: text;
-    color: transparent;
-    font-weight: bold;
-    text-shadow: 0 0 10px #ff66b2, 0 0 20px #ff66b2;
+    color: #FF0000;
 }
 
 
@@ -264,5 +259,6 @@ body {
     }
 
 }
+
 
 
