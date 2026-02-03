@@ -22,9 +22,6 @@ fetch('config.json')
       `A hug is a way to say, "I care,"
 A hug is a way to show, "I’m there."
 Happy Hug Day, my love!`,
-      `Your hugs are my safe place,
-Where I find peace and grace.
-Happy Hug Day, mama!`,
       `A hug from you is all I need,
 To feel loved and freed.
 Happy Hug Day, my love!`,
