@@ -6,39 +6,30 @@ const roseDay = [
   `You are my forever Valentine,
   The one who makes my heart shine.
   Happy Valentine's Day, my love!`,
-  `You are the reason I believe in love,
-  You are my blessing from above.
-  Happy Valentine's Day, mama!`,
-  `You are my heart, my soul, my everything,
-  With you, my life is forever spring.
-  Happy Valentine's Day, my love!`,
   `You are my today, tomorrow, and forever,
   My love for you will never waver.
   Happy Valentine's Day, mama!`,
   `You are my sunshine on cloudy days,
   My guiding light in every way.
   Happy Valentine's Day, my love!`,
-  `You are my dream come true,
-  My forever Valentine, only you.
-  Happy Valentine's Day, my love!`,
+  `If love were a story, I’d want to spend every chapter with you. 
+  You’re the greatest adventure I’ve ever known. 
+  Happy Valentine’s Day, my love! 💘`,
   `You are the melody in my heart,
   The reason my world feels like art.
   Happy Valentine's Day, mama!`,
-  `You are my forever and always,
-  My love for you will never fade.
-  Happy Valentine's Day, my love!`,
+  `If kisses were candy, I’d give you the whole box. 
+  But for today, you’ll just have to settle for me. 😘🍬💖
+  Happy Valentine's Day, mama!`,
   `You are my happiness, my pride,
   The one who’s always by my side.
   Happy Valentine's Day, mama!`,
   `You are my heart’s greatest treasure,
   A love beyond any measure.
   Happy Valentine's Day, my love!`,
-  `You are my forever Valentine,
-  The one who makes my heart align.
-  Happy Valentine's Day, my love!`,
-  `You are my everything, my all,
-  The one who makes me stand tall.
-  Happy Valentine's Day, mama!`
+  `Here’s my Valentine’s Day gift for you: a lifetime of love, laughter, and kisses. 
+  And maybe a little extra mischief. 😏💋
+  Happy Valentine's Day, my love!`
 ];
 
 fetch('config.json')
