@@ -40,7 +40,7 @@ body {
 .main h2 {
     color: white;
     letter-spacing: 10px;
-    font-size: 30px;
+    font-size: 40px;
     transform: rotate(-2deg);
     border-bottom: 2px dotted  white;
     border-radius: 1rem;
@@ -176,6 +176,7 @@ lord-icon {
     }
 
 }
+
 
 
 
