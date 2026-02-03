@@ -9,14 +9,11 @@ Happy Promise Day, my love!`,
   `I promise to be your strength and guide,
 And always walk by your side.
 Happy Promise Day, mama!`,
-  `I promise to cherish you every day,
-And love you in every possible way.
-Happy Promise Day, my love!`,
   `I promise to hold your hand forever,
 And leave you never.
 Happy Promise Day, my love!`,
-  `I promise to love you more with each passing day,
-And never let you go away.
+  `I promise to always be the one who steals your heart… 
+and maybe even your hoodie. 😉❤️
 Happy Promise Day, mama!`,
   `I promise to be your partner in every dream,
 And make life better than it may seem.
@@ -30,14 +27,14 @@ Happy Promise Day, mama!`,
   `I promise to love you unconditionally,
 And cherish you endlessly.
 Happy Promise Day, mama!`,
-  `I promise to be your forever and always,
-And love you through all our days.
-Happy Promise Day, my love!`,
   `I promise to make you smile every day,
 And keep your worries at bay.
 Happy Promise Day, mama!`,
-  `I promise to be your constant and true,
-And always stand by you.
+  `I promise to always keep you wanting more, 
+but don’t worry, I’ll give you just enough to make you crave me even more. 😉💖
+Happy Promise Day, mama!`,
+  `I promise I’ll always be your personal troublemaker, 
+but I also promise to make everything better after. 😉💖
 Happy Promise Day, mamoi!`
 ];
 
