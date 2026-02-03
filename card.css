@@ -211,12 +211,11 @@ body {
 }
 
 #spName,
-#fpname {
+#fpName {
     text-transform: capitalize;
     letter-spacing: 2.5px;
-    color: #FF0000;
+    color: rgb(246, 131, 246);
 }
-
 
 .copyright {
     font-size: 1.5rem;
@@ -259,6 +258,7 @@ body {
     }
 
 }
+
 
 
 
