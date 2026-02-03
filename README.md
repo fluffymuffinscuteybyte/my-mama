@@ -1,6 +1,4 @@
-# Just For You 💖
+# My Mama 💖
 
 This is my personalized Valentine website...
 
-Live link: https://fluffymuffinscuteybyte.github.io/my-mama/
-)
