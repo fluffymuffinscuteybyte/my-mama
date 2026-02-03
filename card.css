@@ -1,14 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=Poppins:wght@300;400;500;600&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Fleur De Leah', cursive;
+    font-family: 'Bonheur Royale', cursive;
     text-decoration: none;
     color: white;
-    text-shadow: 0 0 5px red, 0 0 10px red, 0 0 15px red, 0 0 20px red, 0 0 25px red;
+    text-shadow: 0 0 8px #ff4d4d, 0 0 15px #ff1a1a, 0 0 20px #e60000, 0 0 30px #b30000, 0 0 40px #990000;
+
 }
 
 .main {
@@ -260,6 +261,7 @@ body {
     }
 
 }
+
 
 
 
