@@ -12,7 +12,7 @@ const proposeQuotes = [
   `Do you have a map? Because I just got lost in your eyes, and now I need directions to your heart.`,
   `I was blinded by your beauty; I'm going to need your name and number for insurance purposes.`,
   `You're the answer to my prayers. Will you make my dreams come true by being mine?`,
-  `If kisses were snowflakes, I'd send you a blizzard. Will you be my snow queen?`
+  `If kisses were snowflakes, I'd send you a blizzard. Will you be my snow king?`
 ];
 
 fetch('config.json')
